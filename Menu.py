@@ -47,9 +47,5 @@ def ocultar_text():
     print("-------------------------------")
 
 
+print()
 menu()
-seleccionar_opcio()
-xifrar()
-desxifrar()
-consultar_hashes()
-ocultar_text()
