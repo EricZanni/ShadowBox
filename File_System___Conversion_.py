@@ -1,0 +1,30 @@
+
+
+
+def demanar_arxiu():
+    try:
+        while True:
+            entrada_usuari = input("Arrossega l'arxiu: ")
+
+            nom_net = entrada_usuari.replace("&", "")
+            nom_net = nom_net.replace("'", "").replace('"', "")
+            nom_net = nom_net.strip()
+            llegir_arxiu(nom_net)
+    except FileNotFoundError:
+        print(f"ERROR: No trobo l'arxiu {entrada_usuari}")
+        return []
+
+
+def llegir_arxiu(nom_net):
+    try:
+        with open(nom_net, "rb") as f:
+            contingut_bytes = f.read()
+        llista_numeros = list(contingut_bytes)
+        print(llista_numeros)
+    except FileNotFoundError:
+        print(f"ERROR: No trobo l'arxiu {nom_net}")
+        return []
+
+   
+demanar_arxiu()
+
