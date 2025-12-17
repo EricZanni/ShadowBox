@@ -21,16 +21,6 @@ def llegir_arxiu(nom_net):
     except FileNotFoundError:
         print(f"ERROR: No trobo l'arxiu {nom_net}")
      
-def llegir_arxiu(nom_net):
-    try:
-        with open(nom_net, "rb") as f:
-            datos_bytes = f.read()  # Aqu  tienes un objeto de tipo 'bytes'
-            
-        # Decodificamos los bytes directamente a texto
-        texto = datos_bytes.decode("utf-8") 
-        return texto
-    except FileNotFoundError:
-        print(f"ERROR: No trobo l'arxiu {nom_net}")
 
    
 arxiu = demanar_arxiu()
