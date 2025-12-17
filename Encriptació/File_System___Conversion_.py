@@ -25,3 +25,4 @@ def llegir_arxiu(nom_net):
    
 arxiu = demanar_arxiu()
 text_bytes = llegir_arxiu(arxiu)
+print(text_bytes)
