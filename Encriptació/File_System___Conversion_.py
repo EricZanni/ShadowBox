@@ -1,28 +1,30 @@
-def demanar_arxiu():
-    while True:
-        entrada_usuari = input("Arrossega l'arxiu: ")
 
-        nom_net = entrada_usuari.replace("&", "")
-        nom_net = nom_net.replace("'", "").replace('"', "")
-        nom_net = nom_net.strip()
-        llegir_arxiu(nom_net)
-   
-        return nom_net
+def llegir_ruta(nom_fitxer):
+    with open(nom_fitxer, "rb") as f:
+        contingut = f.read()
+    return contingut
 
+def text_a_numeros(contingut):
+    llista_bytes = list(contingut)
+    return llista_bytes
 
-def llegir_arxiu(nom_net):
-    try:
-        with open(nom_net, "rb") as f:
-            contingut_bytes = f.read()
-            llista_bytes = list(contingut_bytes)
-            text_bytes = str(llista_bytes)
-            net_text_byte = text_bytes.replace(",", "").replace("[", "").replace("]","")
-        return net_text_byte
-    except FileNotFoundError:
-        print(f"ERROR: No trobo l'arxiu {nom_net}")
-     
+def numeros_a_text(llista_bytes):
+    llista_numeros = bytes(llista_bytes)
+    return(llista_numeros)
 
-   
-arxiu = demanar_arxiu()
-text_bytes = llegir_arxiu(arxiu)
-print(text_bytes)
+def guardar_llista_bytes(llista_numeros, nom_fitxer):
+    text_final = ""
+
+    for i in range(len(llista_numeros)):
+        # Passem el número a text i l'afegim al resultat
+        text_final += str(llista_numeros[i])
+        
+        # Si NO és l'últim número, hi afegim una coma per separar 
+        if i < len(llista_numeros) - 1:
+            text_final += ","
+    
+    # Ara que ja tenim tot el "72,111,108...", el guardem
+    with open(nom_fitxer, "w", encoding="utf-8") as f:
+        f.write(text_final)
+    
+    print(f"Fet! Arxiu guardat a: {nom_fitxer}")
