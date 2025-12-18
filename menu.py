@@ -1,3 +1,4 @@
+import os
 
 def menu():
     print("           ShadowBox        ")
@@ -33,6 +34,18 @@ def seleccionar_opcio():
 def xifrar():
     print("         XIFRAR          ")
     print("-------------------------")
+    archivo = input("Dime el nombre del archivo (ej: secret.txt): ")
+    
+    
+    # Importamos DENTRO de la función para evitar errores al inicio
+    try:
+        from encriptar.main_loop_integration import xifrar
+        # Llamamos a la función PASANDO el nombre del archivo
+        xifrar(archivo) 
+    except ImportError as e:
+        print(f"Error de sistema: No se encuentra el modulo de encriptacion. {e}")
+    except Exception as e:
+        print(f"Ha ocurrido un error inesperado: {e}")
 
 def desxifrar():
     print("         DESXIFRAR          ")
@@ -50,3 +63,4 @@ def ocultar_text():
 
 menu()
 seleccionar_opcio()
+
