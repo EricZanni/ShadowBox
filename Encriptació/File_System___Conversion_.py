@@ -28,3 +28,4 @@ def guardar_llista_bytes(llista_numeros, nom_fitxer):
         f.write(text_final)
     
     print(f"Fet! Arxiu guardat a: {nom_fitxer}")
+
