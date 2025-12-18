@@ -1,44 +1,44 @@
-# ShadowBox: Suite de Gestión de Identidad y Criptografía Aplicada
+# ShadowBox: Suite de Gestió d'Identitat i Criptografia Aplicada
 
-## Introducción
-**ShadowBox** es una plataforma de seguridad integral desarrollada en Python, diseñada para centralizar la protección de información sensible. El programa combina la gestión robusta de identidades, algoritmos de transformación criptográfica y la manipulación de archivos a bajo nivel.
+## Introducció
+**ShadowBox** és una plataforma de seguretat integral desenvolupada en Python, dissenyada per centralitzar la protecció d'informació sensible. El programa combina la gestió robusta d'identitats, algoritmes de transformació criptogràfica i la manipulació de fitxers a baix nivell.
 
-El objetivo principal es ofrecer un entorno controlado donde los usuarios puedan asegurar su identidad y aplicar capas de cifrado personalizado a sus documentos, garantizando que la información solo sea accesible por sus propietarios legítimos.
-
----
-
-## Funcionalidades del Programa
-
-El sistema ofrece un conjunto de herramientas técnicas avanzadas divididas en módulos especializados:
-
-* **Gestión de Usuarios Segura:** Permite la creación de cuentas con validación de contraseñas robustas que deben incluir mayúsculas, minúsculas, números y símbolos.
-* **Protección mediante Hashing:** Utiliza el algoritmo **SHA-256** para generar firmas digitales de las contraseñas, asegurando que las claves reales nunca se almacenen en texto plano.
-* **Sistema de Conversión de Archivos:** Capacidad para leer archivos en modo binario y convertirlos en listas numéricas para facilitar su procesamiento criptográfico.
-* **Validación de Propiedad:** Incluye un módulo para asociar archivos a usuarios específicos mediante la verificación previa de credenciales.
-* **Esteganografía:** El sistema está preparado para integrar funciones de ocultación de mensajes de texto dentro de archivos de imagen.
+L'objectiu principal és oferir un entorn controlat on els usuaris puguin assegurar la seva identitat i aplicar capes de xifratge personalitzat als seus documents, garantint que la informació només sigui accessible pels seus propietaris legítims.
 
 ---
 
-## Público Objetivo y Sector
+## Funcionalitats del Programa
 
-**ShadowBox** está orientado a dar solución a necesidades en los siguientes sectores:
+El sistema ofereix un conjunt d'eines tècniques avançades dividides en mòduls especialitzats:
 
-1.  **Educación en Ciberseguridad:** Ideal para estudiantes que deseen comprender el funcionamiento interno de los procesos de cifrado simétrico y la gestión de bases de datos de usuarios.
-2.  **Privacidad de Datos Personales:** Para usuarios que requieran una herramienta ligera para anonimizar archivos locales antes de su almacenamiento.
-3.  **Desarrollo de Software:** Como base para implementar módulos de validación de contraseñas y tratamiento de archivos binarios en proyectos de mayor escala.
-
----
-
-## Especificaciones Técnicas
-
-* **Lenguaje:** Python 3.x.
-* **Librerías:** Uso de la librería estándar `hashlib` para seguridad criptográfica.
-* **Persistencia:** Almacenamiento de datos en ficheros de texto plano para asegurar la portabilidad.
+* **Gestió d'Usuaris Segura:** Permet la creació de comptes amb validació de contrasenyes robustes que han d'incloure majúscules, minúscules, números i símbols.
+* **Protecció mitjançant Hashing:** Utilitza l'algoritme **SHA-256** per generar signatures digitals de les contrasenyes, assegurant que les claus reals mai s'emmagatzemin en text pla.
+* **Sistema de Conversió de Fitxers:** Capacitat per llegir fitxers en mode binari i convertir-los en llistes numèriques per facilitar el seu processament criptogràfic.
+* **Validació de Propietat:** Inclou un mòdul per associar fitxers a usuaris específics mitjançant la verificació prèvia de credencials.
+* **Esteganografia:** El sistema està preparat per integrar funcions d'ocultació de missatges de text dins de fitxers d'imatge.
 
 ---
 
-## Instrucciones de Uso
+## Públic Objectiu i Sector
 
-1. Ejecuta el archivo principal `menu.py`.
-2. Selecciona una opción del menú interactivo (Xifrar, Desxifrar, Consultar Hashes u Ocultar texto).
-3. Sigue las instrucciones en pantalla para el registro de usuarios o la manipulación de archivos.
+**ShadowBox** està orientat a donar solució a necessitats en els següents sectors:
+
+1. **Educació en Ciberseguretat:** Ideal per a estudiants que desitgin comprendre el funcionament intern dels processos de xifratge simètric i la gestió de bases de dades d'usuaris.
+2. **Privacitat de Dades Personals:** Per a usuaris que requereixin una eina lleugera per anonimitzar fitxers locals abans del seu emmagatzematge.
+3. **Desenvolupament de Programari:** Com a base per implementar mòduls de validació de contrasenyes i tractament de fitxers binaris en projectes de major escala.
+
+---
+
+## Especificacions Tècniques
+
+* **Llenguatge:** Python 3.x.
+* **Llibreries:** Ús de la llibreria estàndard `hashlib` per a seguretat criptogràfica.
+* **Persistència:** Emmagatzematge de dades en fitxers de text pla per assegurar la portabilitat.
+
+---
+
+## Instruccions d'Ús
+
+1. Executa el fitxer principal `menu.py`.
+2. Selecciona una opció del menú interactiu (Xifrar, Desxifrar, Consultar Hashes u Ocultar text).
+3. Segueix les instruccions en pantalla per al registre d'usuaris o la manipulació de fitxers.
