@@ -1,7 +1,7 @@
 # ShadowBox: Suite de Gestión de Identidad y Criptografía Aplicada
 
 ## Introducción
-**ShadowBox** es una plataforma de seguridad integral desarrollada en Python, diseñada para centralizar la protección de información sensible. [cite_start]El programa combina la gestión robusta de identidades, algoritmos de transformación criptográfica y la manipulación de archivos a bajo nivel[cite: 1].
+**ShadowBox** es una plataforma de seguridad integral desarrollada en Python, diseñada para centralizar la protección de información sensible. El programa combina la gestión robusta de identidades, algoritmos de transformación criptográfica y la manipulación de archivos a bajo nivel.
 
 El objetivo principal es ofrecer un entorno controlado donde los usuarios puedan asegurar su identidad y aplicar capas de cifrado personalizado a sus documentos, garantizando que la información solo sea accesible por sus propietarios legítimos.
 
@@ -13,8 +13,7 @@ El sistema ofrece un conjunto de herramientas técnicas avanzadas divididas en m
 
 * **Gestión de Usuarios Segura:** Permite la creación de cuentas con validación de contraseñas robustas que deben incluir mayúsculas, minúsculas, números y símbolos.
 * **Protección mediante Hashing:** Utiliza el algoritmo **SHA-256** para generar firmas digitales de las contraseñas, asegurando que las claves reales nunca se almacenen en texto plano.
-* **Motor de Cifrado (Transformación):** Implementa funciones de sustitución de bytes (SubBytes), rotación de filas (ShiftRows) y mezcla con clave secreta mediante operaciones XOR (AddRoundKey).
-* [cite_start]**Sistema de Conversión de Archivos:** Capacidad para leer archivos en modo binario y convertirlos en listas numéricas para facilitar su procesamiento criptográfico[cite: 1].
+* **Sistema de Conversión de Archivos:** Capacidad para leer archivos en modo binario y convertirlos en listas numéricas para facilitar su procesamiento criptográfico.
 * **Validación de Propiedad:** Incluye un módulo para asociar archivos a usuarios específicos mediante la verificación previa de credenciales.
 * **Esteganografía:** El sistema está preparado para integrar funciones de ocultación de mensajes de texto dentro de archivos de imagen.
 
@@ -25,7 +24,7 @@ El sistema ofrece un conjunto de herramientas técnicas avanzadas divididas en m
 **ShadowBox** está orientado a dar solución a necesidades en los siguientes sectores:
 
 1.  **Educación en Ciberseguridad:** Ideal para estudiantes que deseen comprender el funcionamiento interno de los procesos de cifrado simétrico y la gestión de bases de datos de usuarios.
-2.  [cite_start]**Privacidad de Datos Personales:** Para usuarios que requieran una herramienta ligera para anonimizar archivos locales antes de su almacenamiento[cite: 1].
+2.  **Privacidad de Datos Personales:** Para usuarios que requieran una herramienta ligera para anonimizar archivos locales antes de su almacenamiento.
 3.  **Desarrollo de Software:** Como base para implementar módulos de validación de contraseñas y tratamiento de archivos binarios en proyectos de mayor escala.
 
 ---
