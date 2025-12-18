@@ -35,7 +35,9 @@ def normes_contrasenya():
 
 def menu_opcions(resposta):
     if resposta == 1:
-        crear_compte_hash()
+        usuari, contrasenya = crear_compte()
+        hash_usuari = generar_hash_usuari(contrasenya)
+        verificacio_usuari(usuari, contrasenya, hash_usuari)
     elif resposta == 2:
         print("Associar arxiu")
     elif resposta == 3:
@@ -59,7 +61,7 @@ def opcio_usuari():
     except ValueError:
         print("\n[ERROR] El valor afegit no es correcte ha de ser entre el 1-4 \n")
         
-def crear_compte_hash():
+def crear_compte():
 
     abcedari = "abcdefghijklmnopqrstuvwxyz"
     numeros = "0123456789"
@@ -91,35 +93,44 @@ def crear_compte_hash():
 
         if contador_minuscules >= 1 and contador_majusculas >= 1 and contador_numeros >= 1 and contador_simbols >= 1 and len(contrasenya) >= 8:
             print("[OK] Usuari registrat correctament")
-            break
+            return usuari, contrasenya
         else:
             if contador_minuscules < 1:
                 print("[ERROR] Et falta una minuscula")
-            elif contador_majusculas < 1:
+            if contador_majusculas < 1:
                 print("[ERROR] Et falta una majuscula")
-            elif contador_numeros < 1:
+            if contador_numeros < 1:
                 print("[ERROR] Et falta un numero")
-            elif contador_simbols < 1:
+            if contador_simbols < 1:
                 print("[ERROR] Et falta un simbol")
-            elif len(contrasenya) < 8:
+            if len(contrasenya) < 8:
                 print("[ERROR] La contrasenya ha de tenir minim 8 caracters")
 
-        try:
-            with open("Usuaris.txt", "r") as Usuaris_fitxer:
-                ...
-        except FileNotFoundError:
-            print("No s'ha trobat el fitxer!!!")
-            resposta = input("Vols crear un fitxer, SI o NO: ").upper()
-            if resposta == "SI":
-                ...
-            elif resposta == "NO":
-                ...
-            
-                
+def generar_hash_usuari(contrasenya): 
+    hash_usuari = hashlib.sha256(contrasenya.encode()).hexdigest()          # Fem que contrasenya pasi de str a bytes, fem us del SHA-256 i ho pasem a hexadecimal
+    return hash_usuari
 
+def verificacio_usuari(usuari, contrasenya, hash):
+    contador = 0
+
+    try:
+        with open("Usuaris.txt", "r") as llegir_fitxer:
+            for linea in llegir_fitxer:
+                contador += 1
+                if f"Usuari:{usuari}" in linea:
+                    print("[ERROR] Aquest usuari ja existeix")
+                    return                     
+    except FileNotFoundError:
+        with open("Usuaris.txt", "w") as Creacio_fitxer:
+            Creacio_fitxer.write("")
+            
+    with open("Usuaris.txt", "a") as escriure_fitxer:
+        escriure_fitxer.write(f"{contador+1}. Usuari:{usuari} Contrasenya:{contrasenya} Hash:{hash}\n")
+        print("[OK] S'ha afegit el usuari nou")
+                
 def sortir_hash():
     exit()
- 
-menu_visual_hash()
-opcio_usuari()
+
+
+
  

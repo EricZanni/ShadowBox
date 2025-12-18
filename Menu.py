@@ -39,13 +39,14 @@ def desxifrar():
     print("----------------------------")
 
 def consultar_hashes():
-    print("         CONSULTAR HASHES          ")
-    print("-----------------------------------")
+    from hash.hash import menu_visual_hash, opcio_usuari
+    menu_visual_hash()
+    opcio_usuari()
 
 def ocultar_text():
     print("         OCULTAR TEXT          ")
     print("-------------------------------")
 
 
-print()
 menu()
+seleccionar_opcio()
