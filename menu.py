@@ -11,17 +11,17 @@ def menu():
 def seleccionar_opcio():
     print()
     while True:
-        seleccio_funcio = int(input("Selecciona la funcio que vols utilitzar: "))
-        if seleccio_funcio == 1:
+        seleccio_funcio = input("Selecciona la funcio que vols utilitzar: ")
+        if seleccio_funcio == "1":
             xifrar()
             break
-        elif seleccio_funcio == 2:
+        elif seleccio_funcio == "2":
             desxifrar()
             break
-        elif seleccio_funcio == 3:
+        elif seleccio_funcio == "3":
             consultar_hashes()
             break
-        elif seleccio_funcio == 4:
+        elif seleccio_funcio == "4":
             ocultar_text()
             break
         else:
@@ -34,18 +34,15 @@ def seleccionar_opcio():
 def xifrar():
     print("         XIFRAR          ")
     print("-------------------------")
-    archivo = input("Dime el nombre del archivo (ej: secret.txt): ")
-    
-    
-    # Importamos DENTRO de la función para evitar errores al inicio
-    try:
-        from encriptar.main_loop_integration import xifrar
-        # Llamamos a la función PASANDO el nombre del archivo
-        xifrar(archivo) 
-    except ImportError as e:
-        print(f"Error de sistema: No se encuentra el modulo de encriptacion. {e}")
-    except Exception as e:
-        print(f"Ha ocurrido un error inesperado: {e}")
+    print("Abans de comencar asegurat que en el fitxer secret.txt hi hagi el missatge que vols xifrar ")
+    while True:
+        arxiu = input("Obre  el fitxer introduint --> secret.txt: ")
+        if arxiu != "secret.txt":
+            print("ERROR: Has d'introduir exactament --> secret.txt <-- ")
+        elif arxiu == "secret.txt":
+                from encriptar.main_loop_integration import xifrar
+                xifrar(arxiu)
+                break
 
 def desxifrar():
     print("         DESXIFRAR          ")
