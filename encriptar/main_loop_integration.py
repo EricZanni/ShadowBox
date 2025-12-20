@@ -17,10 +17,10 @@ def xifrar(nom_fitxer):
             clau_numeros = [ord(x) for x in clau] #Per cada lletra en la clau es transforma en ord
 
             for i in range(3):
-                llista_numeros = ft.sub_bytes(llista_numeros)     
-                llista_numeros = ft.shift_rows(llista_numeros)    
-                llista_numeros = ft.add_round_key(llista_numeros, clau_numeros) 
-    
+                llista_numeros = ft.substituir_nums(llista_numeros)     
+                llista_numeros = ft.moure_esquerra(llista_numeros)    
+                llista_numeros = ft.afegeix_clau(llista_numeros, clau_numeros)
+
             print(llista_numeros)
             fl.guardar_llista_bytes(llista_numeros, "xifratge_" + nom_fitxer)
             print(f"Arxiu xifrat correctament: xifratge_{nom_fitxer}")
