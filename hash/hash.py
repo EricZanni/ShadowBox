@@ -1,9 +1,10 @@
 import hashlib
+import pwinput
  
 def menu_visual_hash():
     print("**************************************")
     print("*                                    *")
-    print("*            MENU HASH               *")
+    print("*             MENU HASH              *")
     print("*                                    *")
     print("**************************************")
     print("*                                    *")
@@ -32,8 +33,8 @@ def normes_contrasenya():
     print("*                                    *")
     print("**************************************")
 
-
 def menu_opcions(resposta):
+    #Moure al usuari a l'opcio que escollit
     if resposta == 1:
         usuari, contrasenya = crear_compte()
         hash_usuari = generar_hash_usuari(contrasenya)
@@ -46,8 +47,9 @@ def menu_opcions(resposta):
         sortir_hash()
  
 def opcio_usuari():
+    #Validacio de la resposta del usuari
     opcions_valides = [1,2,3,4]
- 
+    
     try:
         while True:
             usuari = int(input("\nESCULL L'OPCIO QUE VOLS: "))
@@ -63,6 +65,7 @@ def opcio_usuari():
         
 def crear_compte():
 
+    #Generar usuari y contrasenya amb politiques
     abcedari = "abcdefghijklmnopqrstuvwxyz"
     numeros = "0123456789"
     simbols = "!@#$%^&*()-_=+[];:',.<>/?|~`"
@@ -73,13 +76,13 @@ def crear_compte():
         contador_numeros = 0
         contador_simbols = 0
 
-        usuari = input("\nEscriu un nom per l'usuari: ")
+        usuari = input("\nEscriu un nom per l'usuari: ").lower()
         if usuari == "":
             print("[ERROR] El nom no pot estar buit")
             continue
 
         normes_contrasenya()
-        contrasenya = input("\nEscriu una contrasenya per l'usuari: ")
+        contrasenya = pwinput.pwinput("\nEscriu una contrasenya per l'usuari: ", mask="*")
 
         for caracter in contrasenya:
             if caracter in abcedari:
@@ -107,10 +110,13 @@ def crear_compte():
                 print("[ERROR] La contrasenya ha de tenir minim 8 caracters")
 
 def generar_hash_usuari(contrasenya): 
+    #Generar hash del user per la contrasenya
     hash_usuari = hashlib.sha256(contrasenya.encode()).hexdigest()          # Fem que contrasenya pasi de str a bytes, fem us del SHA-256 i ho pasem a hexadecimal
     return hash_usuari
 
 def verificacio_usuari(usuari, contrasenya, hash):
+
+    #Donar registre al fitxer Usuaris.txt amb les dades donades
     contador = 0
 
     try:
@@ -129,6 +135,7 @@ def verificacio_usuari(usuari, contrasenya, hash):
         print("[OK] S'ha afegit el usuari nou")
                 
 def sortir_hash():
+    #Sortir del programa
     exit()
 
 

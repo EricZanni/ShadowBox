@@ -1,13 +1,19 @@
-
+'''
+Llegeix el contingut del fitxer .txt en bytes
+'''
 def llegir_ruta(nom_fitxer):
     with open(nom_fitxer, "rb") as f:
         contingut = f.read()
     return contingut
-
-def text_a_numeros(contingut):
+'''
+Ho converteix en una llista
+'''
+def text_a_llista(contingut):
     llista_bytes = list(contingut)
     return llista_bytes
-
+'''
+Transforma la llista de numeros en bytes
+'''
 def numeros_a_text(llista_bytes):
     llista_numeros = bytes(llista_bytes)
     return(llista_numeros)
@@ -23,7 +29,7 @@ def guardar_llista_bytes(llista_numeros, nom_fitxer):
         if i < len(llista_numeros) - 1:
             text_final += ","
     
-    # Ara que ja tenim tot el "72,111,108...", el guardem
+
     with open(nom_fitxer, "w", encoding="utf-8") as f:
         f.write(text_final)
     
