@@ -1,9 +1,10 @@
 import hashlib
+import pwinput
 
 def associar_arxiu(arxiu):
     # Registrar al usuari un fitxer hash
     usuari = input("Introdueix el teu usuari: ").lower()
-    contrasenya_usuari = input("Introdueix la contrasenya: ")
+    contrasenya_usuari = pwinput.pwinput("Introdueix la contrasenya: ", mask="*")
     validat = False
 
     try: 

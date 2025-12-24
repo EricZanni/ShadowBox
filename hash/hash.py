@@ -1,4 +1,5 @@
 import hashlib
+import pwinput
  
 def menu_visual_hash():
     print("**************************************")
@@ -81,7 +82,7 @@ def crear_compte():
             continue
 
         normes_contrasenya()
-        contrasenya = input("\nEscriu una contrasenya per l'usuari: ")
+        contrasenya = pwinput.pwinput("\nEscriu una contrasenya per l'usuari: ", mask="*")
 
         for caracter in contrasenya:
             if caracter in abcedari:
