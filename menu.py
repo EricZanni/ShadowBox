@@ -49,8 +49,7 @@ def desxifrar():
     print("----------------------------")
 
 def consultar_hashes():
-    from hash.hash import menu_visual_hash, opcio_usuari
-    menu_visual_hash()
+    from hash.hash import opcio_usuari
     opcio_usuari()
 
 def ocultar_text():

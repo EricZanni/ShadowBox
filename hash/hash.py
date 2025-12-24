@@ -94,7 +94,7 @@ def verificacio_usuari(usuari, contrasenya, hash):
         with open("Usuaris.txt", "r") as llegir_fitxer:
             for linea in llegir_fitxer:
                 contador += 1
-                if f"Usuari:{usuari}" in linea:
+                if f"usuari:{usuari}" in linea:
                     print("[ERROR] Aquest usuari ja existeix")
                     return                     
     except FileNotFoundError:
@@ -102,7 +102,7 @@ def verificacio_usuari(usuari, contrasenya, hash):
             Creacio_fitxer.write("")
 
     with open("Usuaris.txt", "a") as escriure_fitxer:
-        escriure_fitxer.write(f"{contador+1}. Usuari:{usuari} Contrasenya:{contrasenya} Hash:{hash}\n")
+        escriure_fitxer.write(f"{contador+1}. usuari:{usuari} contrasenya:{contrasenya} Hash:{hash}\n")
         print("[OK] S'ha afegit el usuari nou")
 
 def sortir_hash():
@@ -118,45 +118,82 @@ def hash_fitxer(fitxer):
         fitxer_hasheat =  hashlib.sha256(f.read()).hexdigest()
         return fitxer_hasheat
 
-def associar_arxiu(arxiu):
-    # Funcio per registrar hash d'arxiu a nom d'un usuari
+def validar_usuari(fitxer):
+    # Funcio per validar el usuari
     missatge_no_valid = "[ERROR] Usuari o contrasenya incorrectes"
-    validat = False
-    vacio = None
 
     usuari = input("Introdueix el teu usuari: ").lower()
     contrasenya = pwinput.pwinput("Introdueix la contrasenya: ", mask="*")
-    verificacio_contrasenya = contrasenya_hash(contrasenya)
+    hash_input = contrasenya_hash(contrasenya)
 
-    try: 
-        with open(arxiu, "r") as f:
-            fitxer = f.readlines()
-            for linea in fitxer:
-                if f"Usuari:{usuari}" in linea.lower():
-                    hash_usuari = linea.split("Hash:")[1].strip() # Despues del string hash: agafi el altre sting que hi ha 
-                    if hash_usuari == verificacio_contrasenya:
+    try:
+        with open(fitxer, "r") as f:
+            for linia in f:
+                if f"usuari:{usuari}" in linia:
+                    hash_guardat = linia.split("Hash:")[1].strip()
+                    if hash_input == hash_guardat:
                         print("[OK] Accedit correctament")
-                        registre_fitxer = input("Escriu la ruta de l'arxiu que vols registrar: ")
-                        fitxer_hasheat = hash_fitxer(registre_fitxer)
-                        if fitxer_hasheat is vacio:
-                            print("[ERROR] El fitxer no s'ha pogut registrar")
-                            return
-                        with open("Usuaris_fitxers.txt", "a") as fitxers_usuari:
-                            fitxers_usuari.write(f"Usuari: {usuari} Fitxers: {fitxer_hasheat}\n")
-                        validat = True
-                        break
+                        return usuari
                     else:
                         print(missatge_no_valid)
                         return
-                    
-        if not validat:
+
             print(missatge_no_valid)
+            return
 
     except FileNotFoundError:
         print("[ERROR] El fitxer Usuaris.txt no existeix.")
         return
 
-# --- Menu i opcions ---
+def associar_arxiu(arxiu):
+    # Funcio per registrar hash d'arxiu a nom d'un usuari
+    usuari = validar_usuari(arxiu)
+
+    registre_fitxer = input("Escriu la ruta de l'arxiu que vols registrar: ")
+    fitxer_hasheat = hash_fitxer(registre_fitxer)
+
+    if not fitxer_hasheat:
+        print("[ERROR] El fitxer no s'ha pogut registrar")
+        return
+
+    try:
+        with open("Usuaris_fitxers.txt", "a") as fitxers_usuari:
+            fitxers_usuari.write(f"usuari:{usuari} fitxer:{fitxer_hasheat}\n")
+        
+        print("[OK] S'ha registrat correctament.")
+
+    except FileNotFoundError:
+        with open("Usuaris_fitxers.txt", "w") as f:
+            f.write(f"usuari:{usuari} fitxer:{fitxer_hasheat}\n")
+
+        print("[OK] S'ha creat i registrat correctament.")
+                        
+def verificar_arxius(arxiu_usuaris, arxiu_registres):
+    # Funcio per comparar hash origianal amb el hash del fitxer actual del usuari
+    trobat = False      # Per forçar despres
+    usuari = validar_usuari(arxiu_usuaris)
+
+    verificar_fitxer = input("Escriu la ruta de l'arxiu que vols verificar")
+    fitxer_hasheat = hash_fitxer(verificar_fitxer)
+
+    if not fitxer_hasheat:
+        print("[ERROR] El fitxer no s'ha pogut registrar")
+        return
+    
+    try:
+        with open(arxiu_registres, "r") as registres:
+            registres = registres.readlines()
+            for linia in registres:
+                if f"usuari:{usuari}" in linia and fitxer_hasheat in linia:
+                    print("[OK] L'arxiu es correcte, no hi ha hagut, cap modificacio")
+                    trobat = True
+                    break
+
+            if not trobat:
+                print("[URGENCIA] L'arxiu que has passat ha sigut modificat o no esta registrat")
+
+    except FileNotFoundError:
+        print(f"[ERROR] El fitxer {arxiu_registres} no existeix.")
 
 def menu_opcions(resposta):
     # Moure al usuari a l'opcio que escollit
@@ -167,7 +204,7 @@ def menu_opcions(resposta):
     elif resposta == 2:
         associar_arxiu("Usuaris.txt")
     elif resposta == 3:
-        print("Verificar arxiu")
+        verificar_arxius("Usuaris.txt", "Usuaris_fitxers.txt")
     elif resposta == 4:
         sortir_hash()
 
@@ -186,4 +223,3 @@ def opcio_usuari():
                 menu_visual_hash()
         except ValueError:
             print("\n[ERROR] El valor afegit no es correcte ha de ser entre el 1-4 \n")
-
