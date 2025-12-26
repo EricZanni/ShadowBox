@@ -47,6 +47,7 @@ def xifrar():
 def desxifrar():
     print("         DESXIFRAR          ")
     print("----------------------------")
+    from desencriptar.desxifrar import desxifrar
 
 def consultar_hashes():
     from hash.hash import menu_visual_hash, opcio_usuari
