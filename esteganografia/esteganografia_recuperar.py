@@ -12,15 +12,15 @@ def recuperar_text(imatge):
         # Convertim els bytes a text (utf-8)
         text_recuperat = missatge_en_bytes.decode("utf-8")
         print(f"\nMissatge recuperat amb èxit:")
-        print(f"--- {text_recuperat} ---")
+        print(f"{text_recuperat}")
     else:
-        print("\nERROR: No s'ha trobat cap missatge secret en aquesta imatge.")
+        print("\n No s'ha trobat cap missatge secret en aquesta imatge.")
 
 # Demanem el fitxer a l'usuari i fem la funció.
 while True:
     imatge = input("Arrossega la imatge per llegir el missatge: ")
     if imatge == "":
-        print("ERROR: No s'ha detectat cap imatge")
+        print("No hi ha cap imatge")
     else:
         recuperar_text(imatge)
         break
