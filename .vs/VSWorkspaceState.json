@@ -2,7 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\desencriptar",
-    "\\encriptar"
+    "\\encriptar",
+    "\\esteganografia"
   ],
   "SelectedNode": "\\menu.py",
   "PreviewInSolutionExplorer": false

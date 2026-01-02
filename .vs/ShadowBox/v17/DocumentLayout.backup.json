@@ -7,6 +7,18 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:menu.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\esteganografia\\esteganografia_recuperar.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:esteganografia\\esteganografia_recuperar.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\esteganografia\\esteganografia.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:esteganografia\\esteganografia.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\esteganografia\\esteganografia_guardar_imatge.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:esteganografia\\esteganografia_guardar_imatge.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\secret.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:secret.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -38,11 +50,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
+              "Title": "esteganografia.py",
+              "DocumentMoniker": "C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\esteganografia\\esteganografia.py",
+              "RelativeDocumentMoniker": "esteganografia\\esteganografia.py",
+              "ToolTip": "C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\esteganografia\\esteganografia.py",
+              "RelativeToolTip": "esteganografia\\esteganografia.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-02T13:20:31.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "esteganografia_guardar_imatge.py",
+              "DocumentMoniker": "C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\esteganografia\\esteganografia_guardar_imatge.py",
+              "RelativeDocumentMoniker": "esteganografia\\esteganografia_guardar_imatge.py",
+              "ToolTip": "C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\esteganografia\\esteganografia_guardar_imatge.py",
+              "RelativeToolTip": "esteganografia\\esteganografia_guardar_imatge.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-02T13:20:29.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "esteganografia_recuperar.py",
+              "DocumentMoniker": "C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\esteganografia\\esteganografia_recuperar.py",
+              "RelativeDocumentMoniker": "esteganografia\\esteganografia_recuperar.py",
+              "ToolTip": "C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\esteganografia\\esteganografia_recuperar.py",
+              "RelativeToolTip": "esteganografia\\esteganografia_recuperar.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-01-02T13:20:03.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "xifratge_secret.txt",
               "DocumentMoniker": "C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\xifratge_secret.txt",
               "RelativeDocumentMoniker": "xifratge_secret.txt",
@@ -55,7 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "file_system.py",
               "DocumentMoniker": "C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\desencriptar\\file_system.py",
               "RelativeDocumentMoniker": "desencriptar\\file_system.py",
@@ -68,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Funcions_desencriptar.py",
               "DocumentMoniker": "C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\desencriptar\\Funcions_desencriptar.py",
               "RelativeDocumentMoniker": "desencriptar\\Funcions_desencriptar.py",
@@ -76,12 +127,11 @@
               "RelativeToolTip": "desencriptar\\Funcions_desencriptar.py",
               "ViewState": "AgIAABIAAAAAAAAAAAAYwCsAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-26T10:19:03.603Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-26T10:19:03.603Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "desxifrar.py",
               "DocumentMoniker": "C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\desencriptar\\desxifrar.py",
               "RelativeDocumentMoniker": "desencriptar\\desxifrar.py",
@@ -89,8 +139,7 @@
               "RelativeToolTip": "desencriptar\\desxifrar.py",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-12-26T10:18:40.246Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-26T10:18:40.246Z"
             },
             {
               "$type": "Document",
@@ -100,14 +149,14 @@
               "RelativeDocumentMoniker": "menu.py",
               "ToolTip": "C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\menu.py",
               "RelativeToolTip": "menu.py",
-              "ViewState": "AgIAACEAAAAAAAAAAAAowDEAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAwwFgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-12-26T10:18:01.833Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "secret.txt",
               "DocumentMoniker": "C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\secret.txt",
               "RelativeDocumentMoniker": "secret.txt",
@@ -115,12 +164,11 @@
               "RelativeToolTip": "secret.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-12-26T10:17:54.981Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-26T10:17:54.981Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Usuaris.txt",
               "DocumentMoniker": "C:\\Users\\za2ni\\OneDrive\\Escriptori\\ENTI\\ShadowBox\\Usuaris.txt",
               "RelativeDocumentMoniker": "Usuaris.txt",
@@ -128,8 +176,7 @@
               "RelativeToolTip": "Usuaris.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-12-26T10:17:53.463Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-26T10:17:53.463Z"
             }
           ]
         }

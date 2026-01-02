@@ -16,11 +16,4 @@ def recuperar_text(imatge):
     else:
         print("\n No s'ha trobat cap missatge secret en aquesta imatge.")
 
-# Demanem el fitxer a l'usuari i fem la funció.
-while True:
-    imatge = input("Arrossega la imatge per llegir el missatge: ")
-    if imatge == "":
-        print("No hi ha cap imatge")
-    else:
-        recuperar_text(imatge)
-        break
+

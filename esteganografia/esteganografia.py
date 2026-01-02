@@ -18,17 +18,5 @@ def amagar_text(imatge, text):
     print(f"Missatge amagat amb exit a {imatge}!")
     
 
-while True:
-    imatge = input("Arrosega la imatge: ")
-    if imatge == "":
-        print("ERROR: No s'ha detectat cap imatge")
-    else:
-        while True:
-            text = input("Introdueix el text que vols amagar")
-            if text == "":
-                print("ERROR: No s'ha detectat cap text")
-            else:
-                amagar_text(imatge, text)
-                break
 
 
