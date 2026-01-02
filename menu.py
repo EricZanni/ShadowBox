@@ -28,9 +28,6 @@ def seleccionar_opcio():
             print("ERROR: Has de posar el numero corresponent de la funcio que vols utilitzar")
             
 
-        
-
-
 def xifrar():
     print("         XIFRAR          ")
     print("-------------------------")
