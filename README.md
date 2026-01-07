@@ -1,45 +1,93 @@
-# ShadowBox (Alpha)
+# ShadowBox
 
-> **Suite de Gestió d'Identitat i Criptografia Aplicada**
+## Descripció
+ShadowBox és una eina de seguretat multifuncional desenvolupada en Python. Aquest programa integra diverses tècniques de criptografia i seguretat informàtica en una sola interfície de consola, permetent als usuaris xifrar missatges, ocultar informació dins d'imatges (esteganografia) i gestionar la integritat dels fitxers mitjançant funcions hash.
 
-**ShadowBox** és una plataforma de seguretat desenvolupada en Python, dissenyada per centralitzar la protecció d'informació sensible. Aquesta versió **Alfa** presenta el nucli del motor de xifratge personalitzat i un sistema complet de gestió d'usuaris amb hashing segur.
+## Funcionalitats Principals
+El sistema disposa d'un menú principal amb quatre mòduls clau:
 
----
+1. **Xifratge de Text:** - Converteix el contingut d'un fitxer de text en una seqüència numèrica il·legible.
+   - Utilitza un algorisme propi de 3 rondes que combina: substitució (S-Box inversa), desplaçament de bits a l'esquerra i operacions XOR amb una clau proporcionada per l'usuari.
 
-## Introducció
-L'objectiu principal és oferir un entorn controlat on els usuaris puguin assegurar la seva identitat i aplicar capes de xifratge personalitzat als seus documents. El projecte combina la gestió d'identitats, algoritmes de transformació criptogràfica i la manipulació de fitxers a baix nivell.
+2. **Desxifratge de Text:** - Reverteix el procés de xifratge per recuperar el missatge original.
+   - Aplica les operacions inverses: XOR, desplaçament a la dreta i substitució original.
 
-## Funcionalitats (Versió Alfa)
+3. **Gestió de Hashes i Usuaris:** - Sistema complet de registre i autenticació.
+   - **Creació de comptes:** Polítiques de contrasenya robustes (majúscules, minúscules, números, símbols i mínim 8 caràcters).
+   - **Integritat de fitxers:** Registra l'empremta digital (Hash SHA-256) de fitxers per verificar posteriorment si han estat modificats.
+   - **Panell d'administrador:** Permet visualitzar l'historial de tots els registres de fitxers.
 
-Aquesta versió inclou els següents mòduls operatius:
+4. **Esteganografia:** - Permet ocultar missatges de text dins de fitxers d'imatge (tècnica de *file appending*) i recuperar-los posteriorment.
+   - Utilitza un separador binari (`#####`) per distingir la imatge del text ocult.
 
-### 1. Sistema de Xifratge Personalitzat
-Un algoritme de xifratge simètric propi que transforma fitxers de text (`secret.txt`) mitjançant múltiples capes de seguretat:
-* [cite_start]**Transformació de Bytes:** Conversió directa de fitxers a llistes numèriques.
-* **Algoritme de 3 Rondes:** Cada arxiu passa per 3 iteracions de transformació:
-    * [cite_start]**Substitució (S-Box):** Substitució no lineal de valors (taula inversa 255-0).
-    * [cite_start]**Permutació (Bit Shifting):** Desplaçament de bytes a l'esquerra.
-    * [cite_start]**Mescla amb Clau (XOR):** Aplicació d'una clau secreta proporcionada per l'usuari.
+## Requisits del Sistema
+Per executar aquest programa necessites tenir instal·lat:
+* **Python 3.x**
+* La llibreria externa `pwinput` (per a l'entrada oculta de contrasenyes al mòdul de hash).
 
-### 2. Gestió d'Identitat i Hashing
-Sistema robust per a la creació i validació d'usuaris:
-* **Hashing SHA-256:** Les contrasenyes s'emmagatzemen com a hash hexadecimal, mai en text pla.
-* **Polítiques de Contrasenya Forta:** Validació obligatòria (Majúscula, minúscula, número, símbol i mínim 8 caràcters).
-* **Persistència:** Base de dades local a `Usuaris.txt`.
-
----
-## Instruccions d'Ús
-
-1. Executa el fitxer principal `menu.py`.
-2. Selecciona una opció del menú interactiu (Xifrar, Desxifrar, Consultar Hashes u Ocultar text).
-3. Segueix les instruccions en pantalla per al registre d'usuaris o la manipulació de fitxers.
-## Requisits i Instal·lació
-
-Aquest projecte requereix **Python 3.x**.
-
-### Dependències
-El projecte utilitza la llibreria externa `pwinput` per a l'entrada oculta de contrasenyes (asteriscs).
+## Instal·lació
+1. Assegura't de tenir els fitxers del projecte organitzats en les seves carpetes corresponents (`encriptar`, `desencriptar`, `hash`, `esteganografia`) tal com requereixen els imports del `menu.py`.
+2. Instal·la la dependència necessària executant la següent comanda a la terminal:
 
 ```bash
 pip install pwinput
 
+Instruccions d'Ús
+Per iniciar el programa, executa l'arxiu principal:
+
+Bash
+
+python menu.py
+1. Xifrar
+Important: Has de tenir un fitxer anomenat exactament secret.txt al directori principal amb el text que vols protegir.
+
+Introdueix una clau quan el sistema t'ho demani. Com més forta sigui la clau, millor serà l'encriptació.
+
+Es generarà un nou fitxer anomenat xifratge_secret.txt.
+
+2. Desxifrar
+El sistema buscarà automàticament l'arxiu xifratge_secret.txt.
+
+Introdueix la mateixa clau utilitzada durant el xifratge per veure el missatge original revelat per pantalla.
+
+3. Consultar Hashes
+Crear compte: Segueix les instruccions per crear un usuari vàlid.
+
+Associar/Verificar: Et permet guardar el hash d'un fitxer i comprovar més tard si ha estat modificat (detecta canvis en el contingut).
+
+Administració: Per accedir a l'historial global (opció 4), necessites credencials d'administrador.
+
+Usuari Admin per defecte: kevindre
+
+Contrasenya Admin: tUTU77.0
+
+4. Ocultar textos en imatges
+Amagar text: Arrossega una imatge a la terminal quan se't demani i escriu el text secret. El programa afegirà el text al final del fitxer d'imatge.
+
+Recuperar text: Arrossega la imatge que conté el secret per extreure el missatge amagat.
+
+Estructura del Projecte
+L'estructura de directoris ha de ser la següent perquè el menu.py funcioni correctament:
+
+menu.py: Script principal.
+
+secret.txt: Arxiu d'entrada per defecte.
+
+Usuaris.txt: Base de dades d'usuaris.
+
+Administradors.txt: Credencials d'admin.
+
+Usuaris_fitxers.txt: Registre d'auditoria.
+
+/encriptar: Conté main_loop_integration.py, funcions_de_transformacio.py, etc.
+
+/desencriptar: Conté desxifrar.py, Funcions_desencriptar.py, etc.
+
+/hash: Conté hash.py.
+
+/esteganografia: Conté esteganografia.py, esteganografia_recuperar.py.
+
+Notes
+L'algorisme de xifratge fa 3 passades per millorar la seguretat.
+
+En l'esteganografia, evita utilitzar la seqüència ##### dins del teu missatge secret, ja que actua com a delimitador de final de fitxer.
