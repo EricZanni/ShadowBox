@@ -47,8 +47,9 @@ def missatge_administrador():
     print("**************************************")
 
 def crear_compte():
-
-    #Generar usuari y contrasenya amb politiques
+    """
+    Generar usuari y contrasenya amb politiques
+    """
     abcedari = "abcdefghijklmnopqrstuvwxyz"
     numeros = "0123456789"
     simbols = "!@#$%^&*()-_=+[];:',.<>/?|~`"
@@ -93,13 +94,19 @@ def crear_compte():
                 print("[ERROR] La contrasenya ha de tenir minim 8 caracters")
 
 def contrasenya_hash(contrasenya): 
-    #Generar hash de la contrasenya del usuari
+    """
+    Generar hash de la contrasenya del usuari
+    """
+
     hash_usuari = hashlib.sha256(contrasenya.encode()).hexdigest()          # Fem que contrasenya pasi de str a bytes, fem us del SHA-256 i ho pasem a hexadecimal
     return hash_usuari
 
 def verificacio_usuari(usuari, contrasenya, hash):
 
-    #Donar registre al fitxer Usuaris.txt amb les dades donades
+    """
+    Donar registre al fitxer Usuaris.txt amb les dades donades
+    """
+
     contador = 0
 
     try:
@@ -118,11 +125,15 @@ def verificacio_usuari(usuari, contrasenya, hash):
         print("[OK] S'ha afegit el usuari nou")
 
 def sortir_hash():
-    #Sortir del programa
+    """
+    Sortir del programa
+    """
     exit()
 
 def hash_fitxer(fitxer):
-    #Verificacio de la existencia de l'arxiu
+    """
+    Verificacio de la existencia de l'arxiu
+    """
     if not os.path.isfile(fitxer):
         print("[ERROR] L'arxiu no existeix o no s'ha trobat")
         return None
@@ -131,7 +142,10 @@ def hash_fitxer(fitxer):
         return fitxer_hasheat
 
 def validar_usuari(fitxer):
-    # Funcio per validar el usuari
+    """
+    Funcio per validar el usuari
+    """
+
     missatge_no_valid = "[ERROR] Usuari o contrasenya incorrectes"
 
     usuari = input("Introdueix el teu usuari: ").lower()
@@ -158,7 +172,10 @@ def validar_usuari(fitxer):
         return
 
 def associar_arxiu(arxiu):
-    # Funcio per registrar hash d'arxiu a nom d'un usuari
+    """
+    Funcio per registrar hash d'arxiu a nom d'un usuari
+    """
+
     usuari = validar_usuari(arxiu)
     if not usuari: #* Fet amb AI
         return     #*
@@ -185,8 +202,11 @@ def associar_arxiu(arxiu):
         print("[OK] S'ha creat i registrat correctament.")
                         
 def verificar_arxius(arxiu_usuaris, arxiu_registres):
-    # Funcio per comparar hash origianal amb el hash del fitxer actual del usuari
-    trobat = False      # Per forçar despres
+    """
+    Funcio per comparar hash origianal amb el hash del fitxer actual del usuari
+    """
+    
+    trobat = False 
     usuari = validar_usuari(arxiu_usuaris)
     if not usuari: #* Fet amb AI
         return     #*
@@ -214,7 +234,10 @@ def verificar_arxius(arxiu_usuaris, arxiu_registres):
         print(f"[ERROR] El fitxer {arxiu_registres} no existeix.")
 
 def validar_administrador(fitxer):
-    # Validar on verificar que el administrador estigui registrat en el fitxer  
+    """
+    Validar on verificar que el administrador estigui registrat en el fitxer  
+    """
+    
     missatge_no_valid = "[ERROR] L'administrador o contrasenya es incorrecte"
 
     usuari = input("Introdueix el teu usuari administrador: ").lower()
@@ -243,13 +266,19 @@ def validar_administrador(fitxer):
         return validat
 
 def historial_registres(fitxer):
-    # Printeara el historial de registres
+    """
+    Printeara el historial de registres
+    """
+
     with open(fitxer, "r") as f:
         fitxer_llegit =f.read()
         print(fitxer_llegit)
 
 def menu_opcions_administrador(resposta):
-    # Opcio escollida per el administrador
+    """
+    Opcio escollida per el administrador
+    """
+    
     funciona = True
     if resposta == 1:
         validat = validar_administrador("Administradors.txt")
@@ -265,7 +294,10 @@ def menu_opcions_administrador(resposta):
         return
 
 def opcion_administrador():
-    # Misssatge per escollir la opcio al administrador
+    """
+    Misssatge per escollir la opcio al administrador
+    """
+    
     missatge_administrador()
     opcions_valides = [1,2]
     while True:
@@ -281,7 +313,10 @@ def opcion_administrador():
             print("\n[ERROR] El valor afegit no es correcte ha de ser entre el 1-2")
 
 def menu_opcions(resposta):
-    # Moure al usuari a l'opcio que escollit
+    """
+    Moure al usuari a l'opcio que escollit
+    """
+    
     if resposta == 1:
         usuari, contrasenya = crear_compte()
         hash_usuari = contrasenya_hash(contrasenya)
@@ -296,7 +331,9 @@ def menu_opcions(resposta):
         sortir_hash()
 
 def opcio_usuari():
-    # Validacio de la resposta del usuari
+    """
+    Validacio de la resposta del usuari
+    """
     menu_visual_hash()
     opcions_valides = [1,2,3,4,5]
     while True:
