@@ -1,21 +1,24 @@
 # Creem la taula de substitució del 255 al 0
 sbox = list(range(255, -1, -1))
-
-# Funció per substituir cada número de la llista per un altre segons la sbox
+'''
+Funció per substituir cada número de la llista per un altre segons la sbox
+'''
 def substituir_nums(llista):
     resultat = []
     for n in llista:
         nou_valor = sbox[n] # Busquem el valor que hi ha a la posició n de la sbox
         resultat.append(nou_valor) # Afegim aquest valor a la nostra llista
     return resultat
-
-# Funció per moure els elements cap a l'esquerra
+'''
+Funció per moure els elements cap a l'esquerra
+'''
 def moure_esquerra(llista):
     if len(llista) < 2: # Si la llista té 0 o 1 elements, no cal moure res
         return llista
     return llista[1:] + [llista[0]] # Agafem des del segon element fins al final i hi enganxem el primer element al final
-
+'''
 # Barrejem la llista amb una clau secreta fent servir l'operació XOR
+'''
 def afegeix_clau(llista, clau):
     resultat = []
     for i in range(len(llista)):

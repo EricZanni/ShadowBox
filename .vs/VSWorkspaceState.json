@@ -3,8 +3,9 @@
     "",
     "\\desencriptar",
     "\\encriptar",
-    "\\esteganografia"
+    "\\esteganografia",
+    "\\hash"
   ],
-  "SelectedNode": "\\menu.py",
+  "SelectedNode": "\\desencriptar\\desxifrar.py",
   "PreviewInSolutionExplorer": false
 }

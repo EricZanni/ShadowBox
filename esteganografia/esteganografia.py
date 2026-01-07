@@ -9,8 +9,7 @@ def amagar_text(imatge, text):
     # Utilitzo "#####" com a marca.
     separador = b"#####" 
 
-    # Obrim la imatge en mode "append binary" ('ab')
-    # 'a' = append (afegir al final), 'b' = binary (binari)
+    
     with open(imatge, "ab") as f:
         f.write(separador)        # Escrivim la marca
         f.write(missatge_en_bytes) # Escrivim el missatge secret
