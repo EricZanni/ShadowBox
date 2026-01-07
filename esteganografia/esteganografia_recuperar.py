@@ -8,19 +8,13 @@ def recuperar_text(imatge):
     # Busquem el separador dins del contingut, si hi és, tallem el contingut i la part [0] és la imatge i la part [1] és el text secret.
     if separador in contingut:
         missatge_en_bytes = contingut.split(separador)[1]
-        
-        # Convertim els bytes a text (utf-8)
+        '''
+        Convertim els bytes a text (utf-8)
+        '''
         text_recuperat = missatge_en_bytes.decode("utf-8")
         print(f"\nMissatge recuperat amb èxit:")
         print(f"{text_recuperat}")
     else:
         print("\n No s'ha trobat cap missatge secret en aquesta imatge.")
 
-# Demanem el fitxer a l'usuari i fem la funció.
-while True:
-    imatge = input("Arrossega la imatge per llegir el missatge: ")
-    if imatge == "":
-        print("No hi ha cap imatge")
-    else:
-        recuperar_text(imatge)
-        break
+

@@ -9,8 +9,7 @@ def amagar_text(imatge, text):
     # Utilitzo "#####" com a marca.
     separador = b"#####" 
 
-    # Obrim la imatge en mode "append binary" ('ab')
-    # 'a' = append (afegir al final), 'b' = binary (binari)
+    
     with open(imatge, "ab") as f:
         f.write(separador)        # Escrivim la marca
         f.write(missatge_en_bytes) # Escrivim el missatge secret
@@ -18,17 +17,5 @@ def amagar_text(imatge, text):
     print(f"Missatge amagat amb exit a {imatge}!")
     
 
-while True:
-    imatge = input("Arrosega la imatge: ")
-    if imatge == "":
-        print("ERROR: No s'ha detectat cap imatge")
-    else:
-        while True:
-            text = input("Introdueix el text que vols amagar")
-            if text == "":
-                print("ERROR: No s'ha detectat cap text")
-            else:
-                amagar_text(imatge, text)
-                break
 
 

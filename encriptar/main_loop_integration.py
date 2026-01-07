@@ -28,4 +28,4 @@ def xifrar(nom_fitxer):
 
 
 if __name__ == "__main__":
-    xifrar("secret.txt")
+    xifrar("secret.txt")   #Aquest if és generat amb IA
