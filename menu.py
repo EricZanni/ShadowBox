@@ -28,9 +28,6 @@ def seleccionar_opcio():
             print("ERROR: Has de posar el numero corresponent de la funcio que vols utilitzar")
             
 
-        
-
-
 def xifrar():
     print("         XIFRAR          ")
     print("-------------------------")
@@ -47,16 +44,48 @@ def xifrar():
 def desxifrar():
     print("         DESXIFRAR          ")
     print("----------------------------")
+    from desencriptar.desxifrar import desxifrar
 
 def consultar_hashes():
-    from hash.hash import menu_visual_hash, opcio_usuari
-    menu_visual_hash()
+    from hash.hash import opcio_usuari
     opcio_usuari()
 
 def ocultar_text():
     print("         OCULTAR TEXT          ")
     print("-------------------------------")
 
+    print("Selecciona una opcio: ")
+    print("1. Amagar text")
+    print("2. Recuperar text")
+    opcio = input("Opcio: ")
+    
+    if opcio == "1":
+        from esteganografia.esteganografia import amagar_text
+        while True:
+            imatge = input("Arrossega la imatge : ").replace('"', '')
+            if imatge == "":
+                print("ERROR: No s'ha detectat cap imatge")
+            else:
+                text = input("Introdueix el text que vols amagar: ")
+                if text == "":
+                    print("ERROR: No s'ha detectat cap text")
+                else:
+                    from esteganografia.esteganografia import amagar_text
+                    amagar_text(imatge, text)
+                    break
+
+
+    elif opcio == "2":
+        while True:
+            imatge = input("Arrossega la imatge per llegir el missatge: ")
+            if imatge == "":
+                print("No hi ha cap imatge")
+            else:
+                from esteganografia.esteganografia_recuperar import recuperar_text
+                recuperar_text(imatge)
+    else:
+        print("Opcio no valida.")
+   
 
 menu()
 seleccionar_opcio()
