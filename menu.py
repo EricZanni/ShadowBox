@@ -77,7 +77,7 @@ def ocultar_text():
 
     elif opcio == "2":
         while True:
-            imatge = input("Arrossega la imatge per llegir el missatge: ")
+            imatge = input("Arrossega la imatge per llegir el missatge: ").replace('"', '')
             if imatge == "":
                 print("No hi ha cap imatge")
             else:
